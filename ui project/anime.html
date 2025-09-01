@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">  
+    <script src="working.js" defer></script>
+    <link rel="stylesheet" href="movies.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="navbar_container">
+                <img src="logo.jpg" id="logo" alt="logo">
+            </div>
+            <div class="navbar_items">
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Search...">
+                    <span class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="navbar_genre">
+                    <a href="main.html" id="Home">Home</a>
+                    <a href="anime.html" id="Anime" style="background-color: #4CAF50;">Anime</a>
+                    <a href="movies.html" id="Movie" class="active">Movies</a>
+                    <a href="#" id="signin" onclick="toggleLogin()">Sign in/Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-modal" id="loginModal">
+            <div class="login">
+                <h1>Login</h1>
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required> <br>
+                    <button type="submit" id="submitButton">Submit</button>
+                </form>
+                <p>Or Sign in Using</p>
+                <div class="lower">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                </div>
+                <p>Don't have an account? <a href="#" id="registerLink">Register Now</a></p>
+                <button class="close-btn-login" onclick="toggleLogin()">✖</button>
+            </div>
+        </div>
+    
+        <!-- Register Modal -->
+        <div class="register-modal" id="registerModal">
+            <div class="register">
+                <h1>Register</h1>
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required><br>
+                    <button type="submit" id="registerButton">Register</button>
+                </form>
+                <button class="close-btn" onclick="toggleRegister()">✖</button>
+            </div>
+        </div>
+
+        <!-- Now in Theaters Section -->
+        <div class="now-in-theaters">
+            <h2>Action  <span>Brought to you by CC</span></h2>
+            <div class="movies">
+                <!-- Initial Row: 7 Movies -->
+                <div class="movie" onclick="openMovieDetails('From weakest hunter to the world s strongest, Jinwoo levels up—solo.', 'https://www.youtube.com/embed/byJ7pxxhaDY?si=eRYKVrO8z3WQe2RM&autoplay=1&mute=1')">
+                    <img src="anime photos/action/solo leveling.jpg" alt="Solo leveling">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Solo leveling</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('In a world turned to stone, one genius reignites civilization with science.', 'https://www.youtube.com/embed/bXgip0F6qdc?si=w3LCPrZP6n1cHmcO&autoplay=1&mute=1')">
+                    <img src="anime photos/action/dr stone.jpg" alt="dr stone">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Dr Stone</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('When Goku and friends are turned into kids, a brand-new battle begins across the universe!', 'https://www.youtube.com/embed/WrgZ6Wn7-GE?si=a3FBIOOrBiJR_LTN&amp&autoplay=1&amp&mute=1')">
+                    <img src="anime photos/action/dragon ball daima.jpg" alt="Dragon Ball Daima">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Dragon Ball Daima</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A brother’s blade cuts through demons to save his sister’s humanity.', 'https://www.youtube.com/embed/wyiZWYMilgk?si=rDR57bqiK1JniJ5q&autoplay=1&mute=1')">
+                    <img src="anime photos/action/demon slayer.jpg" alt="Demon Slayer">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                        <h3>Demon Slayer</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('Cursed spirits, deadly sorcery, and one boy who eats a finger to fight fate.', 'https://www.youtube.com/embed/pkKu9hLT-t8?si=nt9exbHdBZKi6MQw&autoplay=1&mute=1')">
+                    <img src="anime photos/action/jjk.jpg" alt="jujutsu kaisen">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>jujutsu kaisen</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A retired assassin runs a convenience store—until his past comes shopping.', 'https://www.youtube.com/embed/9TbmxbckSjE?si=NBuLE_MDxdcsyGJR&autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="anime photos/action/sakamoto days.jpg" alt="Sakamoto Days">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Sakamoto Days</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A young boy seeks his father and finds a world where hunters chase danger, dreams, and destiny.', 'https://www.youtube.com/embed/d6kBeJjTGnY?si=HrmNFo3FzCZwAHIy&autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="anime photos/action/hunter-x-hunter.jpg" alt="hunter-x-hunter">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>hunter-x-hunter</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <!-- Hidden Row: 7 More Movies -->
+                <div class="hidden-movies" id="theaters-hidden">
+                    <div class="movie" onclick="openMovieDetails('In a world of walls and monsters, freedom comes at a brutal price.', 'https://www.youtube.com/embed/3xNH23QkNpk?si=TuVXZY8hmpE1AHvD&autoplay=1&mute=1')">
+                        <img src="anime photos/action/aot.jpg" alt="Attack On Titan">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>Attack On Titan</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('In a kingdom built on blood and ambition, a lone mercenary battles fate, friendship, and the darkness within.', 'https://www.youtube.com/embed/H6dkuEdzaFY?si=7fn-VhU2dqgRrkod&autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="anime photos/action/berserk.jpg" alt="Berserk: The Golden Age Arc - Memorial Edition">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>Berserk: The Golden Age Arc - Memorial Edition</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('As ancient Wizard Kings return, Asta must defy fate with no magic—only will.', 'https://www.youtube.com/embed/PrgxJ1_sUcs?si=8relLo9I1W4zuUpx&autoplay=1&mute=1')">
+                        <img src="anime photos/action/black clover.jpg" alt="Black Clover: Sword of the Wizard King">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>Black Clover: Sword of the Wizard King</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('In a world where people burst into flames, one fiery rookie ignites the fight against hell itself.', 'https://www.youtube.com/embed/fzM43HZ6oeg?si=bATczrDenkc9Ab2f&autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="anime photos/action/fire force.jpg" alt="fire force">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>Fire Force</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('A rubber pirate with a big dream sails the seas for freedom, friends, and the ultimate treasure.', 'https://www.youtube.com/embed/3NUizzImhig?si=NbEX5FzFzmomrBUH&autoplay=1&mute=1')">
+                        <img src="anime photos/action/one piece.jpg" alt="one piece">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>one piece</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('A loud ninja with a hidden pain fights for recognition, bonds, and his dream to become Hokage.', 'https://www.youtube.com/embed/-G9BqkgZXRA?si=TL9c9ECmFEN7W5Mf&autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="anime photos/action/naruto.jpg" alt="Naruto">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>Naruto</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('In a world ravaged by monsters, one man becomes the very thing he swore to destroy.', 'https://www.youtube.com/embed/JwF7bhvnCxI?si=Ea0_6hBAFS4mG6gm&autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="anime photos/action/kaiju no.8.jpg" alt="kaiju no:8">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>kaiju no:8</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn" onclick="toggleMovies('theaters-hidden')">View More</button>
+        </div>
+
+        <!-- Animations Section -->
+        <div class="now-in-theaters">
+            <h2>Romance <span>Brought to you by CC</span></h2>
+            <div class="movies">
+                <!-- Initial Row: 7 Movies -->
+                <div class="movie" onclick="openMovieDetails('A pianist trapped in silence meets a violinist who brings color back to his world.', 'https://www.youtube.com/embed/3aL0gDZtFbE?si=nbfwL5UXmhae1Lpl&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/your lie in april.jpg" alt="your lie in april">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>your lie in april</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A delinquent’s life changes when he meets a girl with dreams—and a love story that echoes through heartbreak and hope.', 'https://www.youtube.com/embed/9ZseZTshl2k?si=jYm6n6ILzYbWRz60&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/clannad.jpg" alt="clannad">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                        <h3>clannad</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A kind-hearted girl discovers a cursed family where love, pain, and healing go hand in hand.', 'https://www.youtube.com/embed/DPEQxuMKGfE?si=aQVVoNqG4x3516TR&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/fruits basket.jpg" alt="fruit basket">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>fruit basket</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('Behind perfect smiles and quiet stares, two high schoolers discover the beauty of being their true selves.', 'https://www.youtube.com/embed/e4RCugyx5No?si=IMozsb3FSqJ3_Uqy&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/Horimiya.jpg" alt="Horimiya">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Horimiya</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('In the battlefield of love, two geniuses wage war to make the other confess first.', 'https://www.youtube.com/embed/hjy7vK0hTAE?si=CCnXNHeloaC_7xC9&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/Kaguya-sama - Love is War" alt="Kaguya-sama: Love is War">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                        <h3>Kaguya-sama: Love is War</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A 27-year-old gets a second shot at youth—by going back to high school for one year.', 'https://www.youtube.com/embed/EMe_zK3th8E?si=T1XovIbNHS-_0KYd&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/ReLIFE.jpg" alt="ReLIFE">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>ReLIFE</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A fake relationship, a secret locket, and way too many girls—love was never this complicated.', 'https://www.youtube.com/embed/dPBBNxl_nKE?si=j6Ua1QjoxF9a9i7d&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/Nisekoi.jpg" alt="Nisekoi">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Nisekoi</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <!-- Hidden Row: 7 More Movies -->
+                <div class="hidden-movies" id="animations-hidden">
+                    <div class="movie" onclick="openMovieDetails('A quiet boy’s world changes when he learns a dying girl’s secret—and shares her final spring.', 'https://www.youtube.com/embed/MmoBvmJA9XI?si=qtgvp7tLJ6MOXMMp&autoplay=1&mute=1')">
+                        <img src="anime photos/romance/I Want to Eat Your Pancreas.jpg" alt="I Want to Eat Your Pancreas">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>I Want to Eat Your Pancreas</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('She’s sweet, she’s stylish—and when danger strikes, she’s the coolest girlfriend ever.', 'https://www.youtube.com/embed/vkUMZlM6aZc?si=YTCAPFx7GI9DJJEJ&autoplay=1&mute=1')">
+                        <img src="anime photos/romance/shikimori's not just a cutie.jpg" alt="Shikimori's Not Just a Cutie">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                            <h3>Shikimori's Not Just a Cutie</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('A shy girl finds her sparkle when a bright, lemon-haired boy helps her break out of her shell.', 'https://www.youtube.com/embed/yBA66VhwCP4?si=STOgA_mlCQ3RV0rI&autoplay=1&mute=1')">
+                        <img src="anime photos/romance/Honey Lemon Soda.jpg" alt="Honey Lemon Soda">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>Honey Lemon Soda</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('Placeholder description for Seized 11.', 'https://www.youtube.com/embed/XfvCTw31p9o?si=voeMA_9PLY7iK141&autoplay=1&mute=1')">
+                        <img src="anime photos/romance/A Couple of Cuckoos.jpg" alt="A Couple of Cuckoos">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>A Couple of Cuckoos</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('She’s the school’s angel—he’s just her quiet neighbor, until kindness turns into something much more.', 'https://www.youtube.com/embed/twfLsWdXcZI?si=vsfXlTz6chDrXQg7&autoplay=1&mute=1')">
+                        <img src="anime photos/romance/The Angel Next Door Spoils Me Rotten.jpg" alt="The Angel Next Door Spoils Me Rotten">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                            <h3>The Angel Next Door Spoils Me Rotten</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('In a world where the heroines always lose, one unlucky guy ends up surrounded by them all.', 'https://www.youtube.com/embed/N-mfa1N0nU8?si=8N-FJwejG0ZvmFMg&autoplay=1&mute=1')">
+                        <img src="anime photos/romance/Makeine Too Many Losing Heroines!.jpg" alt="Makeine: Too Many Losing Heroines!">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>Makeine: Too Many Losing Heroines!</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('Across parallel worlds, one boy searches for the versions of love he lost—and the one he’ll hold onto.', 'https://www.youtube.com/embed/02rqjtoOIDI?si=kBM2HZ4uBL0To63O&autoplay=1&mute=1')">
+                        <img src="anime photos/romance/To Every You I've Loved Before.jpg" alt="To Every You I've Loved Before">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>To Every You I've Loved Before</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn" onclick="toggleMovies('animations-hidden')">View More</button>
+        </div>
+
+        <!-- All Movies Section -->
+        <div class="now-in-theaters">
+            <h2>Isekai <span>Brought to you by CC</span></h2>
+            <div class="movies">
+                <!-- Initial Row: 7 Movies -->
+                <div class="movie" data-description="A thrilling adventure of Mickey 17." onclick="openMovieDetails('A quiet soul meets a dying girl, and in her final days, they teach each other how to truly live.', 'https://www.youtube.com/embed/MmoBvmJA9XI?si=qtgvp7tLJ6MOXMMp&autoplay=1&mute=1')">
+                    <img src="anime photos/romance/i want to eat your pancreas.jpg" alt="I Want to Eat Your Pancreas">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>I Want to Eat Your Pancreas</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="An epic journey in the Lost Lands." onclick="openMovieDetails('Reincarnated as a dungeon spider, a high school girl spins, fights, and evolves her way through chaos.', 'https://www.youtube.com/embed/geMv8Lwk2sM?si=oyMr9aF0IiDzlIFU&autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="anime photos/isekai/So I'm a Spider, So What.jpg" alt="So I'm a Spider, So What?">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>So I'm a Spider, So What?</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="A gripping tale of survival in Last Breath." onclick="openMovieDetails('Thrown into a brutal game world, a loner must lead his team through life-or-death quests to survive—and find purpose.', 'https://www.youtube.com/embed/U26Up23GGDk?si=bMjOwX-EZi6uuzTz&autoplay=1&mute=1')">
+                    <img src="anime photos/isekai/I'm Standing on a Million Lives.jpg" alt="I'm Standing on a Million Lives">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>I'm Standing on a Million Lives</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="The rebellious story of Rule Breakers." onclick="openMovieDetails('Killed in his world, reborn as a slime—he builds a new life, one monster ally at a time', 'https://www.youtube.com/embed/gqrkjNpoeQM?si=dw8B6Km_yUgeTOM7&autoplay=1&mute=1')">
+                    <img src="anime photos/isekai/that-time-i-got-reincarnated-as-a-slime-1.jpg" alt="That Time I Got Reincarnated as a Slime">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>That Time I Got Reincarnated as a Slime</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="A night of chaos in Night of the Zoopocal." onclick="openMovieDetails('Dragged into a fantasy world, a boy gains the power to rewind death—but at the cost of unbearable pain.', 'https://www.youtube.com/embed/lXs3yIc_2CU?si=0lBiPYoB4ojtHIao&autoplay=1&mute=1')">
+                    <img src="anime photos/isekai/Re ZERO -Starting Life in Another World.jpg" alt="Re:ZERO -Starting Life in Another World-">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>Re:ZERO -Starting Life in Another World</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="Betrayed by a goddess and cast into a strange world, a boy with godlike powers forges his own path under a moonlit sky." onclick="openMovieDetails('Betrayed by a goddess and cast into a strange world, a boy with godlike powers forges his own path under a moonlit sky.', 'https://www.youtube.com/embed/Q7IUIZix_yw?si=SckOtXlEm5Q-amY2&autoplay=1&mute=1')">
+                    <img src="anime photos/isekai/tsukimichi-moonlit-fantasy-anime-cover-art-1.jpg" alt="TSUKIMICHI -Moonlit Fantasy-">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>TSUKIMICHI -Moonlit Fantasy</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="An epic journey in the Lost Lands." onclick="openMovieDetails('Trapped in a deadly virtual world, a lone swordsman fights to survive—and protect those he loves.', 'https://www.youtube.com/embed/Z7oiq9LDm8k?si=WVzzqn1WShr61PhM&autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="anime photos/isekai/Sword Art Online.jpg" alt="Sword Art Online">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Sword Art Online</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <!-- Hidden Row: 7 More Movies -->
+                <div class="hidden-movies" id="all-movies-hidden">
+                    <div class="movie" data-description="A thrilling adventure of Mickey 17." onclick="openMovieDetails('Trapped in a game as an undead overlord, a once-ordinary player sets out to conquer a new world.', 'https://www.youtube.com/embed/gg5uZ56VmAo?si=7Uw2W5rR_B7E0dZr&autoplay=1&mute=1')">
+                        <img src="anime photos/isekai/Overlord.jpg" alt="Overlord">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>Overlord</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="An epic journey in the Lost Lands." onclick="openMovieDetails('After dying, a young man awakens in another body—unlocking magic, memories, and a quest for justice.', 'https://www.youtube.com/embed/PZv-KkVyZNc?si=vs0kIg7EvLErc4lQ&autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="anime photos/isekai/Seirei Gensouki  Spirit Chronicles.jpg" alt="Seirei Gensouki: Spirit Chronicles">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>Seirei Gensouki: Spirit Chronicles</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="A gripping tale of survival in Last Breath." onclick="openMovieDetails('Killed by accident, revived with a smartphone—now he’s living the ultimate cheat life in a magical new world.', 'https://www.youtube.com/embed/G_OGFoGywiY?si=lON_qZ6gPLO_aTAG&autoplay=1&mute=1')">
+                        <img src="anime photos/isekai/In Another World With My Smartphone.jpg" alt="In Another World With My Smartphone">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>In Another World With My Smartphone</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="The rebellious story of Rule Breakers." onclick="openMovieDetails('Summoned as a healer, he’s trained like a warrior—because in this world, healing means surviving the hard way.', 'https://www.youtube.com/embed/KA_PVIRqPKo?si=E6bxb4U2N6LZO3DO&autoplay=1&mute=1')">
+                        <img src="anime photos/isekai/the-wrong-way-to-use-healing-magic.jpg" alt=" The Wrong Way to Use Healing Magic">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3> The Wrong Way to Use Healing Magic</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="A night of chaos in Night of the Zoopocal." onclick="openMovieDetails('Summoned to another world, a quiet office worker discovers her hidden magic—and her power to heal more than wounds.', 'https://www.youtube.com/embed/o64XfitE4CU?si=jlllYpPQnZ-9fzGp&autoplay=1&mute=1')">
+                        <img src="anime photos/isekai/The Saint's Magic Power is Omnipotent.jpg" alt="The Saint's Magic Power Is Omnipotent">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>The Saint's Magic Power Is Omnipotent</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="A thrilling adventure of Mickey 17." onclick="openMovieDetails('On her seventh life and out of patience, a clever villainess marries her enemy—for peace, not love... or so she says.', 'https://www.youtube.com/embed/aPSmBt6GeqA?si=9hLbzf5cCpfXsYH7&autoplay=1&mute=1')">
+                        <img src="anime photos/isekai/7th Time Loop The Villainess Enjoys a Carefree Life Married to Her Worst Enemy.jpg" alt="7th Time Loop: The Villainess Enjoys a Carefree Life Married to Her Worst Enemy">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>7th Time Loop</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="An epic journey in the Lost Lands." onclick="openMovieDetails('Doomed to die as the villainess, she flips the script by romancing the final boss himself.', 'https://www.youtube.com/embed/iW2kXMqtTlM?si=MZiq_R0mZR27m-d8&autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="anime photos/isekai/I'm the Villainess, So I'm Taming the Final Boss.jpg  " alt="I'm the Villainess, So I'm Taming the Final Boss">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>I'm the Villainess, So I'm Taming the Final Boss</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn" onclick="toggleMovies('all-movies-hidden')">View More</button>
+        </div>
+
+        <div class="movie-details-modal" id="movieDetailsModal">
+            <div class="movie-details">
+                <div class="movie-details-header">
+                    
+                    <button class="close-btn" onclick="closeMovieDetails()">✖</button>
+                </div>
+                <div class="movie-details-video">
+                    <iframe width="800" height="450" id="movieVideo" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="movie-details-content">
+                    <p id="movieDescription">Movie description goes here.</p>
+                    <div class="rating-options">
+                        <p>Rate this movie:</p>
+                        <div class="star-rating">
+                            <span class="fa fa-star" data-rating="1"></span>
+                            <span class="fa fa-star" data-rating="2"></span>
+                            <span class="fa fa-star" data-rating="3"></span>
+                            <span class="fa fa-star" data-rating="4"></span>
+                            <span class="fa fa-star" data-rating="5"></span>
+                        </div>
+                    </div>
+                    <button class="write-review-button">Write a Review</button>
+    
+                    <div class="review-input" id="reviewInput">
+                        <textarea placeholder="Write your review here..."></textarea>
+                        <button onclick="submitReview()">Submit Review</button>
+                    </div>
+    
+                    <div class="reviews" id="reviews">
+                        <h4>Reviews:</h4>
+                        <p>No reviews yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <script>
+        function toggleLogin() {
+            const modal = document.getElementById('loginModal');
+            if (modal) {
+                modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+                toggleBodyScroll(modal.style.display === 'flex');
+            }
+        }
+
+        function toggleRegister() {
+            const modal = document.getElementById('registerModal');
+            if (modal) {
+                modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+                toggleBodyScroll(modal.style.display === 'flex');
+            }
+        }
+
+        function openMovieDetails(description, videoUrl) {
+            const modal = document.getElementById('movieDetailsModal');
+            const descriptionElement = document.getElementById('movieDescription');
+            const videoElement = document.getElementById('movieVideo');
+            
+            console.log("Loading video URL:", videoUrl); // Debug log
+            descriptionElement.textContent = description;
+            videoElement.src = videoUrl;
+            modal.style.display = 'flex';
+            toggleBodyScroll(true);
+        }
+
+        function closeMovieDetails() {
+            const modal = document.getElementById('movieDetailsModal');
+            const videoElement = document.getElementById('movieVideo');
+            modal.style.display = 'none';
+            videoElement.src = ''; // Stop video playback
+            toggleBodyScroll(false);
+        }
+
+        function toggleBodyScroll(disable) {
+            document.body.style.overflow = disable ? 'hidden' : 'auto';
+        }
+
+        function toggleMovies(sectionId) {
+            const hiddenSection = document.getElementById(sectionId);
+            const button = hiddenSection.parentElement.nextElementSibling;
+            if (hiddenSection.style.display === "flex") {
+                hiddenSection.style.display = "none";
+                button.textContent = "View More";
+            } else {
+                hiddenSection.style.display = "flex";
+                button.textContent = "View Less";
+            }
+        }
+
+        document.getElementById('registerLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            toggleLogin(); // Close login modal
+            toggleRegister(); // Open register modal
+        });
+    </script>
+
+    
+</body>
+</html>

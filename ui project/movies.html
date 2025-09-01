@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="movies.css">
+    <script src="working.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="navbar_container">
+                <img src="logo.jpg" id="logo" alt="logo">
+            </div>
+            <div class="navbar_items">
+                <div class="search-container">
+                    <input type="search" class="search-input" placeholder="Search...">
+                    <span class="search-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="navbar_genre">
+                    <a href="main.html" id="Home">Home</a>
+                    <a href="anime.html" id="Anime">Anime</a>
+                    <a href="movies.html" id="Movie" class="active" style="background-color: #4CAF50;">Movies</a>
+                    <a href="#" id="signin" onclick="toggleLogin()">Sign in/Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-modal" id="loginModal">
+            <div class="login">
+                <h1>Login</h1>
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required><br>
+                    <button type="submit" id="submitButton">Submit</button>
+                </form>
+                <p>Or Sign in Using</p>
+                <div class="lower">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                </div>
+                <p>Don't have an account? <a href="#" id="registerLink">Register Now</a></p>
+                <button class="close-btn-login" onclick="toggleLogin()">✖</button>
+            </div>
+        </div>
+    
+        <!-- Register Modal -->
+        <div class="register-modal" id="registerModal">
+            <div class="register">
+                <h1>Register</h1>
+                <form>
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required><br>
+                    <button type="submit" id="registerButton">Register</button>
+                </form>
+                <button class="close-btn" onclick="toggleRegister()">✖</button>
+            </div>
+        </div>
+
+        <!-- Now in Theaters Section -->
+        <div class="now-in-theaters">
+            <h2>Suspense and Thriller <span>Brought to you by CC</span></h2>
+            <div class="movies">
+                <!-- Initial Row: 7 Movies -->
+                <div class="movie" onclick="openMovieDetails(' A group of European immigrants aboard a ship to America encounter a nightmarish mystery when they discover another missing vessel adrift at sea..', 'https://www.youtube.com/embed/ulOOON_KYHs?si=ewYY4z1v0S2y3crD? autoplay=1&mute=1')">
+                    <img src="movies (1)\1899.jpg" alt="1899">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>1899</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails(' A ruthless gangster family rises to power in post-WWI Birmingham.', 'https://www.youtube.com/embed/Ruyl8_PT_y8?si=BcswOFeJ_fGiKRNg?autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="movies (1)\peaky blinders.jpg" alt="In the Lost Lands">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>peaky blinders</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails(' A fading musician helps a rising singer find fame as his own career declines.', 'https://www.youtube.com/embed/oOOdt5DwIpI?autoplay=1&mute=1')">
+                    <img src="movies (1)\a star is born.jpg" alt="Mickey 17">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>star is born</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails(' A fading musician helps a rising singer find fame as his own career declines.', 'https://www.youtube.com/embed/rCj-Fb1OmXg?autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="movies (1)\big bang theory.jpg" alt="In the Lost Lands">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>big bang theory</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('Two detectives hunt for missing girls and uncover a deeper, deadly conspiracy..', 'https://www.youtube.com/embed/cNrqE1axFNk?autoplay=1&mute=1')">
+                    <img src="movies (1)\big sky.jpg" alt="Mickey 17">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>big sky</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('An epic journey in the Lost Lands.', 'https://www.youtube.com/embed/xwhER5DRmKE?autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="movies (1)\graceland.jpg" alt="In the Lost Lands">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>Graceland</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A family races to survive as a planet-killing comet heads for Earth.', 'https://www.youtube.com/embed/vz-gdEL_ae8?autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="movies (1)\greenland.jpg" alt="In the Lost Lands">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>greenland</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <!-- Hidden Row: 7 More Movies -->
+                <div class="hidden-movies" id="theaters-hidden">
+                    <div class="movie" onclick="openMovieDetails('A warrior torn between Saxons and Danes fights for his birthright.', 'https://www.youtube.com/embed/WxPApTGWwas?autoplay=1&mute=1')">
+                        <img src="movies (1)\the last kingdom.jpg" alt="Mickey 17">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>the last kingdom</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails(' A sweeping romance unfolds aboard the doomed ocean liner on its tragic maiden voyage.', 'https://www.youtube.com/embed/kVrqfYjkTdQ?autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="movies (1)\titanic.jpg" alt="In the Lost Lands">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>titanic</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('Survivors fight for their lives in a world overrun by zombies and chaos.', 'https://www.youtube.com/embed/sfAc2U20uyg?autoplay=1&mute=1')">
+                        <img src="movies (1)\the walking dead.jpg" alt="Mickey 17">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>the walking dead</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails(' An investigator probes the mysterious disappearance of a passenger plane mid-flight.', 'https://www.youtube.com/embed/RmEMdMnGcm4?autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="movies (1)\departure.jpg" alt="In the Lost Lands">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>departures</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('A thrilling adventure of Mickey 17.', 'https://www.youtube.com/embed/2Kh3jccZocc?autoplay=1&mute=1')">
+                        <img src="movies (1)\ride hide fight.jpg" alt="Mickey 17">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>ride the fight</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('A newly appointed coroner uncovers the truth behind mysterious deaths', 'https://www.youtube.com/embed/NrbcI2DcupM?autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="movies (1)\coroner.jpg" alt="In the Lost Lands">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>coroner</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('A teenage assassin, raised in isolation, fights for survival', 'https://www.youtube.com/embed/MY3qmeB5_mc?autoplay=1&mute=1')">
+                        <img src="movies (1)\hanna.jpg" alt="In the Lost Lands">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>hanna</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn" onclick="toggleMovies('theaters-hidden')">View More</button>
+        </div>
+
+        <!-- Animations Section -->
+        <div class="now-in-theaters">
+            <h2>Fantasy <span>Brought to you by cc</span></h2>
+            <div class="movies">
+                <!-- Initial Row: 7 Movies -->
+                <div class="movie" onclick="openMovieDetails(' A ballerinas pursuit of perfection spirals into madness.', ' https://www.youtube.com/embed/5jaI1XOB-bs?autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="movies (1)\blackswan.jpg" alt="Seized 1">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>blackswan</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails(' Two artists fall in love while chasing their dreams in L.A.', 'https://www.youtube.com/embed/zAGVQLHvwOY?autoplay=1&mute=1')">
+                    <img src="movies (1)\joker.jpg" alt="Seized 2">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                        <h3>joker</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A troubled loner transforms into Gothams infamous criminal mastermind..', 'https://www.youtube.com/embed/0pdqf4P9MB8?autoplay=1&mute=1')">
+                    <img src="movies (1)\lalaland.jpg" alt="Seized 3">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>lalaland</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A mysterious disease starts killing the worlds richest people', 'https://www.youtube.com/embed/vby29VH1-fQ?autoplay=1&mute=1')">
+                    <img src="movies (1)\rich flu.jpg" alt="Seized 4">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>rich flu</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A fearless princess sets out to find her sister whose icy powers trapped their kingdom in eternal winter..', 'https://www.youtube.com/embed/fs4ng0VptOk?autoplay=1&mute=1')">
+                    <img src="movies (1)\river blood.jpg" alt="Seized 5">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                        <h3>river blood</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails('A fearless princess sets out to find her sister whose icy powers trapped their kingdom in eternal winter..', 'https://www.youtube.com/embed/TbQm5doF_Uc?autoplay=1&mute=1')">
+                    <img src="movies (1)\disnep frozen.jpg" alt="Seized 6">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>disnep frozen</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" onclick="openMovieDetails(' A young girl enters a magical world to save her parents, ', 'https://www.youtube.com/embed/ByXuk9QqQkk?autoplay=1&mute=1')">
+                    <img src="movies (1)\mikyzaki spirated away.jpg" alt="Seized 7">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>miyzaki spiratewd away</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <!-- Hidden Row: 7 More Movies -->
+                <div class="hidden-movies" id="animations-hidden">
+                    <div class="movie" onclick="openMovieDetails(' A young girl enters a magical world to save her parents, .', 'https://www.youtube.com/embed/A7qOi8VyxG8?autoplay=1&mute=1')">
+                        <img src="movies (1)\the office.jpg" alt="Seized 8">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>the office</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('Two rival magicians obsessively compete, leading to dark secrets and deadly illusions.', 'https://www.youtube.com/embed/RLtaA9fFNXU?autoplay=1&mute=1')">
+                        <img src="movies (1)\the prestige.jpg" alt="Seized 9">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                            <h3>the prestige</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails('Two rival magicians obsessively compete, leading to dark secrets and deadly illusions..', 'https://www.youtube.com/embed/iRVgiO5Ei6k?autoplay=1&mute=1')">
+                        <img src="movies (1)\die alone.jpg" alt="Seized 10">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>die alone</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails(' – A Seattle policeman searches for his missing fiancée in a small town ', 'https://www.youtube.com/embed/vBni83T5rqc?autoplay=1&mute=1')">
+                        <img src="movies (1)\wolf lake.jpg" alt="Seized 11">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>wolf lake</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails(' A teenager discovers he\'s a werewolf.', 'https://www.youtube.com/embed/wLJUPjiRbAM?autoplay=1&mute=1')">
+                        <img src="movies (1)\wolves.jpg" alt="Seized 12">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐ (4/5)</span>
+                            <h3>wolves</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails(' A teenager discovers hes a werewolf', 'https://www.youtube.com/embed/XVnfFsMKbMo?autoplay=1&mute=1')">
+                        <img src="movies (1)\brothers.jpg" alt="Seized 13">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>brothers</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" onclick="openMovieDetails(' A podcaster returns to her hometown and becomes entangled in a dangerous cold case..', 'https://www.youtube.com/embed/fq2DXbE-Ykk?autoplay=1&mute=1')">
+                        <img src="movies (1)\the killer with no name.jpg" alt="Seized 14">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>the killer with no name</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn" onclick="toggleMovies('animations-hidden')">View More</button>
+        </div>
+
+        <!-- All Movies Section -->
+        <div class="now-in-theaters">
+            <h2>Trending now <span>Brought to you by CC</span></h2>
+            <div class="movies">
+                <!-- Initial Row: 7 Movies -->
+                <div class="movie" data-description="A superstar magician, whose career is ruined by scanda." onclick="openMovieDetails('A thrilling adventure of Mickey 17.', 'https://www.youtube.com/embed/yYeHKfwoOb0?autoplay=1&mute=1')">
+                    <img src="movies (1)\deception.jpg" alt="Mickey 17">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>deception</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description=" An investigator probes the disappearance of Flight 716 over the Atlanti." onclick="openMovieDetails('An epic journey in the Lost Lands.', 'https://www.youtube.com/embed/RmEMdMnGcm4?autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="movies (1)\departure.jpg" alt="In the Lost Lands">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>departure</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description=" A human girl and an alien boy fall in love amid interspecies tensions" onclick="openMovieDetails('A gripping tale of survival in Last Breath.', 'https://www.youtube.com/embed/m09IFeC6BN0?autoplay=1&mute=1')">
+                    <img src="movies (1)\star crossed.jpg" alt="Last Breath">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>star crossed</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="The rebellious story of Rule Breakers." onclick="openMovieDetails('The rebellious story of Rule Breakers.', 'https://www.youtube.com/embed/x7MudPmb8s8?autoplay=1&mute=1')">
+                    <img src="movies (1)\the girl oin the wood.jpg" alt="Rule Breakers">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>the girl on the wood</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="A night of chaos in Night of the Zoopocal." onclick="openMovieDetails('A night of chaos in Night of the Zoopocal.', 'https://www.youtube.com/embed/4LYiAEV_XnA?autoplay=1&mute=1')">
+                    <img src="movies (1)\the innocent man.jpg" alt="Night of the Zoopocal">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>the innocent man</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="A Seattle cop uncovers a community of werewolves while searching for his missing fiancée. " onclick="openMovieDetails('A thrilling adventure of Mickey 17.', 'https://www.youtube.com/embed/vBni83T5rqc?autoplay=1&mute=1')">
+                    <img src="movies (1)\wolf lake.jpg" alt="Mickey 17">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                        <h3>wolf lake</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <div class="movie" data-description="– A Saxon noble, raised by Vikings, seeks to reclaim his ancestral lands" onclick="openMovieDetails('An epic journey in the Lost Lands.', 'https://www.youtube.com/embed/WxPApTGWwas?autoplay=1&mute=1&enablejsapi=1')">
+                    <img src="movies (1)\the last kingdom.jpg" alt="In the Lost Lands">
+                    <div class="movie-info">
+                        <span class="rating">⭐⭐⭐ (3/5)</span>
+                        <h3>the last kingdom</h3>
+                        <button class="watchlist-button">+ WATCHLIST</button>
+                    </div>
+                </div>
+                <!-- Hidden Row: 7 More Movies -->
+                <div class="hidden-movies" id="all-movies-hidden">
+                    <div class="movie" data-description="A supervillain adopts three orphans as part of a scheme to steal the moon." onclick="openMovieDetails('A thrilling adventure of Mickey 17.', 'https://www.youtube.com/embed/zzCZ1W_CUoI?autoplay=1&mute=1')">
+                        <img src="movies (1)\despicable me.jpg" alt="Mickey 17">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>despicable</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="Count Dracula's lavish resort for monsters is thrown into chaos ." onclick="openMovieDetails('An epic journey in the Lost Lands.', 'https://www.youtube.com/embed/q4RK3jY7AVk?autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="movies (1)\hotel transylvania.jpg" alt="In the Lost Lands">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>hotel transylvania</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="A gripping tale of survival in Last Breath." onclick="openMovieDetails('A gripping tale of survival in Last Breath.', 'https://www.youtube.com/embed/gSw6ei5tdbg?autoplay=1&mute=1')">
+                        <img src="movies (1)\the kings speech.jpg" alt="Last Breath">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>the kings speech</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="The rebellious story of Rule Breakers." onclick="openMovieDetails('The rebellious story of Rule Breakers.', 'https://www.youtube.com/embed/W6Mm8Sbe__o?autoplay=1&mute=1')">
+                        <img src="movies (1)\science of the lambs.jpg" alt="Rule Breakers">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>science of the lambs</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="A night of chaos in Night of the Zoopocal." onclick="openMovieDetails('A night of chaos in Night of the Zoopocal.', 'https://www.youtube.com/embed/4LYiAEV_XnA?autoplay=1&mute=1')">
+                        <img src="movies (1)\the innocent man.jpg" alt="Night of the Zoopocal">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>the innocent man </h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description="A thrilling adventure of Mickey 17." onclick="openMovieDetails('A thrilling adventure of Mickey 17.', 'https://www.youtube.com/embed/y9ZouUyPKx8?autoplay=1&mute=1')">
+                        <img src="movies (1)\sherlock.jpg" alt="Mickey 17">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐⭐⭐ (5/5)</span>
+                            <h3>sherlock</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                    <div class="movie" data-description=":  Lucifer Morningstar, the Devil, who abandons Hell to run a nightclub in Los Angeles." onclick="openMovieDetails('An epic journey in the Lost Lands.', 'https://www.youtube.com/embed/X4bF_quwNtw?autoplay=1&mute=1&enablejsapi=1')">
+                        <img src="movies (1)\lucifier.jpg" alt="In the Lost Lands">
+                        <div class="movie-info">
+                            <span class="rating">⭐⭐⭐ (3/5)</span>
+                            <h3>lucifier</h3>
+                            <button class="watchlist-button">+ WATCHLIST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="view-more-btn" onclick="toggleMovies('all-movies-hidden')">View More</button>
+        </div>
+
+        <div class="movie-details-modal" id="movieDetailsModal">
+            <div class="movie-details">
+                <div class="movie-details-header">
+                    <button class="close-btn" onclick="closeMovieDetails()">✖</button>
+                </div>
+                <div class="movie-details-video">
+                    <iframe width="800" height="450" id="movieVideo" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="movie-details-content">
+                    <p id="movieDescription">Movie description goes here.</p>
+                    <div class="rating-options">
+                        <p>Rate this movie:</p>
+                        <div class="star-rating">
+                            <span class="fa fa-star" data-rating="1"></span>
+                            <span class="fa fa-star" data-rating="2"></span>
+                            <span class="fa fa-star" data-rating="3"></span>
+                            <span class="fa fa-star" data-rating="4"></span>
+                            <span class="fa fa-star" data-rating="5"></span>
+                        </div>
+                    </div>
+                    <button class="write-review-button">Write a Review</button>
+    
+                    <div class="review-input" id="reviewInput">
+                        <textarea placeholder="Write your review here..."></textarea>
+                        <button onclick="submitReview()">Submit Review</button>
+                    </div>
+    
+                    <div class="reviews" id="reviews">
+                        <h4>Reviews:</h4>
+                        <p>No reviews yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLogin() {
+            const modal = document.getElementById('loginModal');
+            if (modal) {
+                modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+                toggleBodyScroll(modal.style.display === 'flex');
+            }
+        }
+
+        function toggleRegister() {
+            const modal = document.getElementById('registerModal');
+            if (modal) {
+                modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+                toggleBodyScroll(modal.style.display === 'flex');
+            }
+        }
+
+        function openMovieDetails(description, videoUrl) {
+            const modal = document.getElementById('movieDetailsModal');
+            const descriptionElement = document.getElementById('movieDescription');
+            const videoElement = document.getElementById('movieVideo');
+            
+            console.log("Loading video URL:", videoUrl); // Debug log
+            descriptionElement.textContent = description;
+            videoElement.src = videoUrl;
+            modal.style.display = 'flex';
+            toggleBodyScroll(true);
+        }
+
+        function closeMovieDetails() {
+            const modal = document.getElementById('movieDetailsModal');
+            const videoElement = document.getElementById('movieVideo');
+            modal.style.display = 'none';
+            videoElement.src = ''; // Stop video playback
+            toggleBodyScroll(false);
+        }
+
+        function toggleBodyScroll(disable) {
+            document.body.style.overflow = disable ? 'hidden' : 'auto';
+        }
+
+        function toggleMovies(sectionId) {
+            const hiddenSection = document.getElementById(sectionId);
+            const button = hiddenSection.parentElement.nextElementSibling;
+            if (hiddenSection.style.display === "flex") {
+                hiddenSection.style.display = "none";
+                button.textContent = "View More";
+            } else {
+                hiddenSection.style.display = "flex";
+                button.textContent = "View Less";
+            }
+        }
+
+        // Add event listener for "Register Now" link
+        document.getElementById('registerLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            toggleLogin(); // Close login modal
+            toggleRegister(); // Open register modal
+        });
+    </script>
+    
+</body>
+</html>
